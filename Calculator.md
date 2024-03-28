@@ -2,13 +2,11 @@ import java.util.Scanner;
 import java.util.Random;
 public class MyJavaApp {
     
-    // Method to greet the user
     public static void greetUser(String userName) {
         String welcomeMessage = "Hello, " + userName + "! Welcome to the math quiz.";
         System.out.println(welcomeMessage);
     }
 
-    // Method to choose the operator based on the random choice integer generated
     public static String chooseOperator(int opNum){
         if (opNum == 1){
             return " - ";
@@ -24,7 +22,6 @@ public class MyJavaApp {
         }
     }
 
-    // Method to perform the required operation and calculate the correct answer
     public static int calculateAnswer(int n1, int n2, String op) {
         int result = 0;
         if(op == " - "){
@@ -50,19 +47,17 @@ public class MyJavaApp {
         
     }
 
-    // Method to print the question in the correct format
+
     public static void printQuestion(int num1, int num2, String op) {
         String question = "What is " + num1 + op + num2 + "?";
         System.out.println(question);
     }
 
-    // Method to bid farewell to the user and give them the result
     public static void printResult(String userName, int score){
         String farewellMessage = "Thanks for taking the quiz. " + userName + ". Your score is " + score + " out of 5.";
         System.out.println(farewellMessage);
     }
- 
- // MAIN STRUCTURE
+
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -77,11 +72,11 @@ public class MyJavaApp {
         int score = 0;
         int totalQuestions = 0;
 
-        // Take input from user and save it in a variable
+        
         System.out.print("Please enter your name: ");
         String userName = scan.nextLine();
 
-        // Make a customized greeting for the user and print it
+       
         greetUser(userName);
 
         while (totalQuestions < 5){
@@ -94,7 +89,7 @@ public class MyJavaApp {
             System.out.print("Ans: ");
             userAnswer = scan.nextInt();
             correctAnswer = calculateAnswer(num1, num2, op);
-            // Increase the score if the answer is correct.
+            
             if (userAnswer == correctAnswer){
                 System.out.println("Correct answer.");
                 score = score + 1;
@@ -105,7 +100,7 @@ public class MyJavaApp {
             totalQuestions = totalQuestions + 1;
         }
 
-        // Call the printResult method here.
+     
         printResult(userName,score);
 
     }
